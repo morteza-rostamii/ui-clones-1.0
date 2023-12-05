@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 //import headSlider from '@/assets/virgool/images/headSlider.png'
 
@@ -14,13 +15,25 @@ const Hero = () => {
       container mx-auto
       '
       >
-        <img 
+        <div
         className='
-        w-full
+        relative
         '
-        src={'/virgool/headSlider.png'}
-        alt="hero-banner" 
-        />
+        style={{
+          aspectRatio: '3/1.1',
+        }}
+        >
+          <Image
+          src={'/virgool/headSlider.png'}
+          alt='hero-banner'
+          //sizes='100vw'
+          fill
+          style={{
+            width: '100%',
+            objectFit: 'cover',
+          }}
+          />
+        </div>
         {/* overlay */}
         <div
         className='

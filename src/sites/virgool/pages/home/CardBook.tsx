@@ -1,5 +1,6 @@
 import React from 'react'
 import BtnMore from './BtnMore'
+import Image from 'next/image'
 
 const CardBook = ({
   book,
@@ -20,14 +21,25 @@ const CardBook = ({
        flex flex-col
        '
        >
-        <img 
+        <div
         className='
-        w-full -mt-8 #shadow-md overflow-visible
-        h-full
+        relative w-full h-full flex-1
         '
-        src={book.image} 
-        alt="" 
-        />
+        style={{
+          aspectRatio: '1/1.5',
+        }}
+        >
+          <Image
+          src={book.image}
+          alt={book.title}
+          //sizes='100vw'
+          fill
+          style={{
+            width: '100%',
+            objectFit: 'cover',
+          }}
+          />
+        </div>
         <BtnMore 
         bgColor=''
         text={'مشاهده بیشتر'}
@@ -45,7 +57,7 @@ const CardBook = ({
         text-center font-bold text-lg
         '
         >
-          کتاب: کوری
+          کتاب: {book.title}
         </h2>
         <div
         className='
@@ -53,13 +65,13 @@ const CardBook = ({
         '
         >
           <p dir='rtl'>
-          نویسنده: José Saramago
+          نویسنده: {book.writer}
           </p>
           <p dir='rtl'>
-          ترجمه: مینو مشیری
+          ترجمه: {book.translator}
           </p>
           <p dir='rtl'>
-          امتیازات: ۴.۵/۵
+          امتیازات: {book.score}
           </p>
         </div>
         <p

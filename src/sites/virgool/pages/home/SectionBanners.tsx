@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import React from 'react'
 
 const SectionBanners = () => {
@@ -32,54 +33,139 @@ const SectionBanners = () => {
         >
           <a 
           className='
-          item-1
+          item-1 relative
           block rounded-md overflow-hidden
           '
           href="#">
-            <img 
+            <div
             className='
-            w-full object-cover h-full
+            relative w-full h-full
             '
-            src="/virgool/banners/Rectangle 188.png" 
-            alt="" />
+            style={{
+              aspectRatio: '1/1',
+            }}
+            >
+              <Image
+              src={'/virgool/banners/Rectangle 188.png'}
+              alt='hero-banner'
+              //sizes='100vw'
+              fill
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+              }}
+              />
+            </div>
+            
+            <div
+            className='
+            absolute top-0 bottom-0 left-0 right-0
+            flex flex-col justify-between cursor-pointer
+            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
+            '
+            >  
+            </div>
+          </a>
+
+          <a 
+          className='
+          item-2 block rounded-md overflow-hidden relative
+          '
+          href="#">
+            <div
+            className='
+            relative w-full h-full
+            '
+            style={{
+              aspectRatio: '1/1',
+            }}
+            >
+              <Image
+              src={'/virgool/banners/Rectangle 187.png'}
+              alt='hero-banner'
+              //sizes='100vw'
+              fill
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+              }}
+              />
+            </div>
+            <div
+            className='
+            absolute top-0 bottom-0 left-0 right-0
+            flex flex-col justify-between cursor-pointer
+            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
+            '
+            >  
+            </div>
+          </a>
+
+          <a 
+          className='
+          item-3 block rounded-md overflow-hidden relative
+          '
+          href="#">
+            <div
+            className='
+            relative w-full h-full
+            '
+            style={{
+              aspectRatio: '1/1',
+            }}
+            >
+              <Image
+              src={'/virgool/banners/Rectangle 138.png'}
+              alt='hero-banner'
+              //sizes='100vw'
+              fill
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+              }}
+              />
+            </div>
+            <div
+            className='
+            absolute top-0 bottom-0 left-0 right-0
+            flex flex-col justify-between cursor-pointer
+            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
+            '
+            >  
+            </div>
           </a>
           <a 
           className='
-          item-2 block rounded-md overflow-hidden
+          item-4 block rounded-md overflow-hidden relative
           '
           href="#">
-            <img 
+            <div
             className='
-            w-full object-cover h-full
+            relative w-full h-full
             '
-            src="/virgool/banners/Rectangle 187.png" 
-            alt="" />
-          </a>
-          <a 
-          className='
-          item-3 block rounded-md overflow-hidden
-          '
-          href="#">
-            <img 
+            style={{
+              aspectRatio: '1/1',
+            }}
+            >
+              <Image
+              src={'/virgool/banners/Rectangle 137.png'}
+              alt='hero-banner'
+              //sizes='100vw'
+              fill
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+              }}
+              />
+            </div>
+            <div
             className='
-            w-full object-cover h-full
+            absolute top-0 bottom-0 left-0 right-0
+            flex flex-col justify-between cursor-pointer
+            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
             '
-            //Rectangle 138.png
-            src="/virgool/banners/Rectangle 138.png" 
-            alt="" />
-          </a>
-          <a 
-          className='
-          item-4 block rounded-md overflow-hidden
-          '
-          href="#">
-            <img 
-            className='
-            w-full object-cover h-full
-            '
-            //Rectangle 137.png
-            src="/virgool/banners/Rectangle 137.png" 
-            alt="" />
+            >  
+            </div>
           </a>
         </div>
       </div>

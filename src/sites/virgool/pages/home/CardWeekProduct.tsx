@@ -3,6 +3,7 @@ import React from 'react'
 import { HiOutlineHeart } from 'react-icons/hi'
 
 import {motion} from 'framer-motion'
+import Image from 'next/image'
 
 const CardWeekProduct = ({
   product,
@@ -18,7 +19,7 @@ const CardWeekProduct = ({
     className='
     relative
     flex rounded-md overflow-hidden
-    bg-green-50
+    #bg-green-50
     '
 
     // animation
@@ -26,12 +27,25 @@ const CardWeekProduct = ({
       scale: 1.05,
     }}
     >
-      <img 
+      <div
       className='
-      w-full
+      #aspect-square w-full h-full
       '
-      src={product.image} 
-      alt="" />
+      style={{
+        aspectRatio: '1/1',
+      }}
+      >
+        <Image
+        src={product.image}
+        alt={product.name}
+        //sizes='100vw'
+        fill
+        style={{
+          width: '100%',
+          objectFit: 'contain',
+        }}
+        />
+      </div>
 
       <div
       className='
