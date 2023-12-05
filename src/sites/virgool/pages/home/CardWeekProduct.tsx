@@ -1,9 +1,10 @@
 import { Button } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import { HiOutlineHeart } from 'react-icons/hi'
 
 import {motion} from 'framer-motion'
 import Image from 'next/image'
+import Skeleton from 'react-loading-skeleton'
 
 const CardWeekProduct = ({
   product,
@@ -14,6 +15,8 @@ const CardWeekProduct = ({
   color: string,
   discount: boolean,
 }) => {
+  const [imgLoaded, setImgLoaded] = useState(false);
+
   return (
     <motion.div
     className='
@@ -35,15 +38,28 @@ const CardWeekProduct = ({
         aspectRatio: '1/1',
       }}
       >
+        {
+        !imgLoaded && (
+          <Skeleton
+          style={{
+            height: '100%'
+          }}
+          />
+        )
+        }
         <Image
         src={product.image}
         alt={product.name}
         //sizes='100vw'
         fill
         style={{
+          display: imgLoaded ? 'block' : 'hidden',
+          opacity: imgLoaded ? 1 : 0, 
           width: '100%',
-          objectFit: 'contain',
+          objectFit: 'cover',
         }}
+        onLoad={() => setImgLoaded(true)}
+        onError={() => setImgLoaded(false)}
         />
       </div>
 

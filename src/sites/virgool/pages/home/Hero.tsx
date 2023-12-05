@@ -1,9 +1,14 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 //import headSlider from '@/assets/virgool/images/headSlider.png'
+//import { Skeleton } from 'antd';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Hero = () => {
+  const [isBannerLoaded, setIsBannerLoaded] = useState(false);
 
+  console.log(isBannerLoaded)
   return (
     <section
     className='
@@ -23,15 +28,32 @@ const Hero = () => {
           aspectRatio: '3/1.1',
         }}
         >
+          {
+          !isBannerLoaded && (
+            <Skeleton
+            style={{
+              height: '100%'
+            }}
+            />
+          )
+          }
           <Image
+          className='
+          transition-all ease-in-out
+          '
           src={'/virgool/headSlider.png'}
           alt='hero-banner'
           //sizes='100vw'
           fill
           style={{
+            display: isBannerLoaded ? 'block' : 'hidden',
+            opacity: isBannerLoaded ? 1 : 0, 
             width: '100%',
             objectFit: 'cover',
           }}
+
+          onLoad={() => setIsBannerLoaded(true)}
+          onError={() => setIsBannerLoaded(false)}
           />
         </div>
         {/* overlay */}

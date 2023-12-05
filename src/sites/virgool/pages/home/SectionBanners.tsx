@@ -2,6 +2,26 @@
 
 import Image from 'next/image'
 import React from 'react'
+import Banner from './Banner'
+
+const banners = [
+  {
+    id: 1,
+    image: '/virgool/banners/Rectangle 188.png',
+  },
+  {
+    id: 2,
+    image: '/virgool/banners/Rectangle 187.png',
+  },
+  {
+    id: 3,
+    image: '/virgool/banners/Rectangle 138.png',
+  },
+  {
+    id: 4,
+    image: '/virgool/banners/Rectangle 137.png',
+  },
+]
 
 const SectionBanners = () => {
   return (
@@ -26,147 +46,24 @@ const SectionBanners = () => {
             لوازم هنری و معماری
           </h2>
         </div>
+
+        {/* grid */}
         <div
         className='
         grid-banners
         '
         >
-          <a 
-          className='
-          item-1 relative
-          block rounded-md overflow-hidden
-          '
-          href="#">
-            <div
-            className='
-            relative w-full h-full
-            '
-            style={{
-              aspectRatio: '1/1',
-            }}
-            >
-              <Image
-              src={'/virgool/banners/Rectangle 188.png'}
-              alt='hero-banner'
-              //sizes='100vw'
-              fill
-              style={{
-                width: '100%',
-                objectFit: 'cover',
-              }}
+          
+          {
+            banners.map((el:any) => (
+              <Banner
+              key={el.id}
+              banner={el}
+              gridItemName={`item-${el.id}`}
               />
-            </div>
-            
-            <div
-            className='
-            absolute top-0 bottom-0 left-0 right-0
-            flex flex-col justify-between cursor-pointer
-            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
-            '
-            >  
-            </div>
-          </a>
-
-          <a 
-          className='
-          item-2 block rounded-md overflow-hidden relative
-          '
-          href="#">
-            <div
-            className='
-            relative w-full h-full
-            '
-            style={{
-              aspectRatio: '1/1',
-            }}
-            >
-              <Image
-              src={'/virgool/banners/Rectangle 187.png'}
-              alt='hero-banner'
-              //sizes='100vw'
-              fill
-              style={{
-                width: '100%',
-                objectFit: 'cover',
-              }}
-              />
-            </div>
-            <div
-            className='
-            absolute top-0 bottom-0 left-0 right-0
-            flex flex-col justify-between cursor-pointer
-            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
-            '
-            >  
-            </div>
-          </a>
-
-          <a 
-          className='
-          item-3 block rounded-md overflow-hidden relative
-          '
-          href="#">
-            <div
-            className='
-            relative w-full h-full
-            '
-            style={{
-              aspectRatio: '1/1',
-            }}
-            >
-              <Image
-              src={'/virgool/banners/Rectangle 138.png'}
-              alt='hero-banner'
-              //sizes='100vw'
-              fill
-              style={{
-                width: '100%',
-                objectFit: 'cover',
-              }}
-              />
-            </div>
-            <div
-            className='
-            absolute top-0 bottom-0 left-0 right-0
-            flex flex-col justify-between cursor-pointer
-            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
-            '
-            >  
-            </div>
-          </a>
-          <a 
-          className='
-          item-4 block rounded-md overflow-hidden relative
-          '
-          href="#">
-            <div
-            className='
-            relative w-full h-full
-            '
-            style={{
-              aspectRatio: '1/1',
-            }}
-            >
-              <Image
-              src={'/virgool/banners/Rectangle 137.png'}
-              alt='hero-banner'
-              //sizes='100vw'
-              fill
-              style={{
-                width: '100%',
-                objectFit: 'cover',
-              }}
-              />
-            </div>
-            <div
-            className='
-            absolute top-0 bottom-0 left-0 right-0
-            flex flex-col justify-between cursor-pointer
-            bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100
-            '
-            >  
-            </div>
-          </a>
+            ))
+          }
+          
         </div>
       </div>
 
