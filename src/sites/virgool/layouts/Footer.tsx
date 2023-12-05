@@ -13,9 +13,10 @@ const Footer = () => {
     >
       <div
       className='
-      grid grid-cols-2 gap-10
+      grid grid-cols-2 gap-10 
       md:grid-cols-2
       lg:grid-cols-4
+      lg:justify-items-center
       container mx-auto
       px-10 py-8
 
@@ -31,7 +32,7 @@ const Footer = () => {
           </h2>
           <div
           className='
-          grid grid-cols-2 gap-4
+          grid grid-cols-2 grid-rows-2 gap-4
           '
           >
             <FaInstagram size={24}/>

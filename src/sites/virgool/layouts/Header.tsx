@@ -1,10 +1,13 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import Logo from '../components/Logo'
 import { Button } from 'antd'
 
 import {HiOutlineHeart, HiOutlineShoppingBag, HiOutlineUser} from 'react-icons/hi'
 import { HiBars3, HiOutlineMagnifyingGlass, HiOutlineMagnifyingGlassCircle, HiOutlineMagnifyingGlassMinus } from "react-icons/hi2";
 import Link from 'next/link';
+import SideMenu from './SideMenu'
 
 const NavItems = [
   <HiOutlineMagnifyingGlass size={24}/>,
@@ -14,6 +17,8 @@ const NavItems = [
 ]
 
 const Header = () => {
+  const openSideMenuRef = useRef(() => {});
+
   return (
     <header
     className='
@@ -47,12 +52,12 @@ const Header = () => {
 
         <div 
         className='
-        flex gap-6
+        flex gap-6 items-center
         '
         >
           <nav
           className='
-          flex gap-2
+          flex gap-2 items-center
           '
           >
             {
@@ -65,9 +70,18 @@ const Header = () => {
             }
           </nav>
 
-          <NavItem icon={<HiBars3 size={24}/>}/>
+          <Button 
+          icon={<HiBars3 
+          size={24}/>}
+          onClick={() => openSideMenuRef.current()}
+          >
+          </Button>
         </div>
       </div>
+      
+      <SideMenu
+      ref={openSideMenuRef}
+      />
     </header>
   )
 }

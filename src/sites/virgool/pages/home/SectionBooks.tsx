@@ -3,7 +3,7 @@ import CardBook from './CardBook'
 import { v4 as uuidv4 } from 'uuid';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,40 +13,40 @@ import 'swiper/css/scrollbar';
 
 const books = [
   {
-    id: uuidv4(),
+    id: 0,
     title: 'کوری',
     writer: 'José Saramago',
     translator: 'مینو مشیری',
     score: '۴.۵/۵',
     brief: 'رمانی از ژوزه ساراماگو که نخستین بار در سال ۱۹۹۵ منتشر شد. ساراماگو که در سال ۱۹۹۸ جایزهٔ نوبل ادبیات را به‌دست‌آورد در این رمان از کوریِ آدم‌ها سخن گفته‌است. در این رمان، هاله‌ای سفیدرنگ بعد از کور شدن افراد مقابل چشمانشان ظاهر می‌شود....', 
-    image: 'https://placehold.co/100x140',
+    image: '/virgool/books/Rectangle 22.png',
   },
   {
-    id: uuidv4(),
+    id: 1,
     title: 'کوری',
     writer: 'José Saramago',
     translator: 'مینو مشیری',
     score: '۴.۵/۵',
     brief: 'رمانی از ژوزه ساراماگو که نخستین بار در سال ۱۹۹۵ منتشر شد. ساراماگو که در سال ۱۹۹۸ جایزهٔ نوبل ادبیات را به‌دست‌آورد در این رمان از کوریِ آدم‌ها سخن گفته‌است. در این رمان، هاله‌ای سفیدرنگ بعد از کور شدن افراد مقابل چشمانشان ظاهر می‌شود....', 
-    image: 'https://placehold.co/100x140',
+    image: '/virgool/books/Rectangle 90.png',
   },
   {
-    id: uuidv4(),
+    id: 2,
     title: 'کوری',
     writer: 'José Saramago',
     translator: 'مینو مشیری',
     score: '۴.۵/۵',
     brief: 'رمانی از ژوزه ساراماگو که نخستین بار در سال ۱۹۹۵ منتشر شد. ساراماگو که در سال ۱۹۹۸ جایزهٔ نوبل ادبیات را به‌دست‌آورد در این رمان از کوریِ آدم‌ها سخن گفته‌است. در این رمان، هاله‌ای سفیدرنگ بعد از کور شدن افراد مقابل چشمانشان ظاهر می‌شود....', 
-    image: 'https://placehold.co/100x140',
+    image: '/virgool/books/Rectangle 22.png',
   },
   {
-    id: uuidv4(),
+    id: 3,
     title: 'کوری',
     writer: 'José Saramago',
     translator: 'مینو مشیری',
     score: '۴.۵/۵',
     brief: 'رمانی از ژوزه ساراماگو که نخستین بار در سال ۱۹۹۵ منتشر شد. ساراماگو که در سال ۱۹۹۸ جایزهٔ نوبل ادبیات را به‌دست‌آورد در این رمان از کوریِ آدم‌ها سخن گفته‌است. در این رمان، هاله‌ای سفیدرنگ بعد از کور شدن افراد مقابل چشمانشان ظاهر می‌شود....', 
-    image: 'https://placehold.co/100x140',
+    image: '/virgool/books/Rectangle 90.png',
   },
 ]
 
@@ -64,7 +64,7 @@ const SectionBooks = () => {
       '
       >
         <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
@@ -72,6 +72,10 @@ const SectionBooks = () => {
         scrollbar={{ draggable: true }}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -88,7 +92,7 @@ const SectionBooks = () => {
         }}
         >
           {
-            books.map((el) => (
+            books.map((el:any) => (
               <SwiperSlide>
                 <CardBook
                 book={el}

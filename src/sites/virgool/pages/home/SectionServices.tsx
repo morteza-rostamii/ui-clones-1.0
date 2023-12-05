@@ -6,22 +6,22 @@ import { v4 as uuidv4 } from 'uuid';
 const items = [
   {
     id: uuidv4(),
-    icon: <HiOutlineCurrencyDollar size={58}/>,
+    icon: <HiOutlineCurrencyDollar />,
     text: 'امکان مقایسه قیمت',
   },
   {
     id: uuidv4(),
-    icon: <HiArrowPathRoundedSquare size={58}/>,
+    icon: <HiArrowPathRoundedSquare />,
     text: 'امکان مقایسه قیمت',
   },
   {
     id: uuidv4(),
-    icon: <HiOutlineTruck size={58}/>,
+    icon: <HiOutlineTruck />,
     text: 'امکان مقایسه قیمت',
   },
   {
     id: uuidv4(),
-    icon: <HiOutlineClock size={58}/>,
+    icon: <HiOutlineClock />,
     text: 'امکان مقایسه قیمت',
   },
 ]
@@ -35,13 +35,14 @@ const SectionServices = () => {
     >
       <div
       className='
-      flex flex-wrap gap-6 text-gray-800 p-6 py-8
-      items-center justify-between 
+      grid grid-cols-2 gap-6
+      lg:grid-cols-4
+      text-gray-800 p-6 py-8
       container mx-auto
       '
       >
         {
-          items.map((el) => (
+          items.map((el:any) => (
             <Item
             icon={el.icon}
             text={el.text}
@@ -63,7 +64,14 @@ const Item = ({
     flex flex-col items-center gap-4
     '
     >
+      <span
+      className='
+      text-4xl text-gray-500 
+      lg:text-6xl
+      '
+      >  
       {icon}
+      </span>
       <span>{text}</span>
     </div>
   )

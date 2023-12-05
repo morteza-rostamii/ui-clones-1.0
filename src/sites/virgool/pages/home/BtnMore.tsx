@@ -14,7 +14,13 @@ const BtnMore = ({
       background: bgColor,
     }}         
     >
+      <span
+      className='
+      text-sm
+      '
+      >
       {text}
+      </span>
     </Button>
   )
 }

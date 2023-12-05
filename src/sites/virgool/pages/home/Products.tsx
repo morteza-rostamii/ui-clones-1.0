@@ -7,6 +7,8 @@ import BtnMore from './BtnMore';
 const Products = ({
   headTxt,
   products,
+  color,
+  discount,
 }:any) => {
   return (
     <section>
@@ -25,7 +27,11 @@ const Products = ({
           bgColor={'#B2DED7'}
           text={'مشاهده بیشتر'}
           />
-          <h2>
+          <h2
+          className='
+          font-bold text-lg
+          '
+          >
             {headTxt}
           </h2>
         </div>
@@ -40,10 +46,12 @@ const Products = ({
         '
         >
           {
-            products.map((el, i) => (
+            products.map((el:any, i:any) => (
               <CardWeekProduct 
               key={i}
               product={el}
+              color={color}
+              discount={discount}
               />
             ))
           }

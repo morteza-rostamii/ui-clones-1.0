@@ -17,7 +17,11 @@ const SectionBanners = () => {
         flex justify-end items-center py-3
         '
         >
-          <h2>
+          <h2
+          className='
+          font-bold text-lg
+          '
+          >
             لوازم هنری و معماری
           </h2>
         </div>
@@ -29,49 +33,52 @@ const SectionBanners = () => {
           <a 
           className='
           item-1
+          block rounded-md overflow-hidden
           '
           href="#">
             <img 
             className='
             w-full object-cover h-full
             '
-            src="https://placehold.co/200x200" 
+            src="/virgool/banners/Rectangle 188.png" 
             alt="" />
           </a>
           <a 
           className='
-          item-2
+          item-2 block rounded-md overflow-hidden
           '
           href="#">
             <img 
             className='
             w-full object-cover h-full
             '
-            src="https://placehold.co/200x200" 
+            src="/virgool/banners/Rectangle 187.png" 
             alt="" />
           </a>
           <a 
           className='
-          item-3
+          item-3 block rounded-md overflow-hidden
           '
           href="#">
             <img 
             className='
             w-full object-cover h-full
             '
-            src="https://placehold.co/400x200" 
+            //Rectangle 138.png
+            src="/virgool/banners/Rectangle 138.png" 
             alt="" />
           </a>
           <a 
           className='
-          item-4
+          item-4 block rounded-md overflow-hidden
           '
           href="#">
             <img 
             className='
             w-full object-cover h-full
             '
-            src="https://placehold.co/200x200" 
+            //Rectangle 137.png
+            src="/virgool/banners/Rectangle 137.png" 
             alt="" />
           </a>
         </div>

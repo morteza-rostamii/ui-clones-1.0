@@ -13,30 +13,30 @@ import SectionServices from '@/sites/virgool/pages/home/SectionServices'
 const weeklyProducts = [
   {
     id: uuidv4(),
-    name: 'ماژیک',
+    name: 'مداد',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/weeks/Rectangle 102 (1).png',
+    likeIcon: <HiOutlineHeart/>
+  },
+  {
+    id: uuidv4(),
+    name: 'کیف',
+    price: '124,000 ت',
+    image: '/virgool/weeks/Rectangle 102 (2).png',
     likeIcon: <HiOutlineHeart/>
   },
   {
     id: uuidv4(),
     name: 'ماژیک',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/weeks/Rectangle 102.png',
     likeIcon: <HiOutlineHeart/>
   },
   {
     id: uuidv4(),
-    name: 'ماژیک',
+    name: 'تراش',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
-    likeIcon: <HiOutlineHeart/>
-  },
-  {
-    id: uuidv4(),
-    name: 'ماژیک',
-    price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/weeks/Rectangle 102.png',
     likeIcon: <HiOutlineHeart/>
   },
 ]
@@ -44,30 +44,30 @@ const weeklyProducts = [
 const onSellProducts = [
   {
     id: uuidv4(),
-    name: 'ماژیک',
+    name: 'دفتر',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/tops/Rectangle 112 (1).png',
     likeIcon: <HiOutlineHeart/>
   },
   {
     id: uuidv4(),
     name: 'ماژیک',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/tops/Rectangle 112 (2).png',
     likeIcon: <HiOutlineHeart/>
   },
   {
     id: uuidv4(),
-    name: 'ماژیک',
+    name: 'کاغذ',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/tops/Rectangle 112 (3).png',
     likeIcon: <HiOutlineHeart/>
   },
   {
     id: uuidv4(),
-    name: 'ماژیک',
+    name: 'جامدادی',
     price: '124,000 ت',
-    image: 'https://placehold.co/300x300',
+    image: '/virgool/tops/Rectangle 112.png',
     likeIcon: <HiOutlineHeart/>
   },
 ]
@@ -94,6 +94,7 @@ const PageVirgool = () => {
         <Products
         headTxt={'پیشنهادهای ویژه'}
         products={onSellProducts}
+        color={'bg-orange-300'}
         />
         <SectionBanners/>
         <SectionServices/>

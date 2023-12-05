@@ -1,6 +1,8 @@
+'use client'
+
 import React from 'react'
 
-import { frame } from 'framer-motion'
+import Box1 from '@/sites/framer/Box1'
 
 const PageFramer = () => {
   return (
@@ -15,9 +17,10 @@ const PageFramer = () => {
       '
       >
         
-        <div>
-          box-1
-        </div>
+        {/* first animation */}
+        <Box1/>
+
+        {/* second */}
 
       </div>
     </div>

@@ -6,6 +6,7 @@ const CardBook = ({
 }:any) => {
   return (
     <div
+    dir={book.id % 2 !== 0 ? 'rtl' : 'ltr'}
     className='
     flex bg-amber-200 px-8 py-4 gap-8 justify-between
     rounded-md
@@ -16,15 +17,15 @@ const CardBook = ({
        <div
        className='
        relative
-       flex flex-col gap-4
+       flex flex-col
        '
        >
         <img 
         className='
-        #absolute #top-0
-        w-full -mt-8 shadow-md overflow-visible
+        w-full -mt-8 #shadow-md overflow-visible
+        h-full
         '
-        src="https://placehold.co/100x140" 
+        src={book.image} 
         alt="" 
         />
         <BtnMore 
@@ -39,6 +40,7 @@ const CardBook = ({
        '
        >
         <h2
+        dir='rtl'
         className='
         text-center font-bold text-lg
         '
@@ -50,13 +52,13 @@ const CardBook = ({
         text-sm text-gray-700 mb-3
         '
         >
-          <p>
+          <p dir='rtl'>
           نویسنده: José Saramago
           </p>
-          <p>
+          <p dir='rtl'>
           ترجمه: مینو مشیری
           </p>
-          <p>
+          <p dir='rtl'>
           امتیازات: ۴.۵/۵
           </p>
         </div>
