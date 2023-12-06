@@ -1,6 +1,6 @@
-import Header from '@/sites/virgool/layouts/Header'
+import Header from '@/sites/booking/layouts/Header'
 import React from 'react'
-import Footer from '../../sites/virgool/layouts/Footer'
+import Footer from '@/sites/booking/layouts/Footer'
 
 import './index.css'
 
@@ -11,7 +11,7 @@ const layout = ({
     <main>
       <Header/>
       {children}
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   )
 }
