@@ -5,6 +5,7 @@ import StyledJsxRegistry from '@/config/RegisterStyled'
 import StyledComponentsRegistry from '@/config/AntdRegistry'
 import { Button, ConfigProvider } from 'antd';
 import theme from '@/config/themeConfig'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +27,9 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <StyledJsxRegistry>
             <ConfigProvider theme={theme}>
+              <Providers>
               {children}
+              </Providers>
             </ConfigProvider>
           </StyledJsxRegistry>
         </StyledComponentsRegistry>

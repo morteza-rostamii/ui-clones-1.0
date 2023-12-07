@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
     className='
-    px-2 bg-white mb-10
+    px-2 bg-white mb-20
     '
     >
       <div

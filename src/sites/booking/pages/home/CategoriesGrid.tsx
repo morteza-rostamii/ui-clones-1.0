@@ -8,13 +8,13 @@ const CategoriesGrid = () => {
   return (
     <section
     className='
-    mb-10
+    mb-20
     '
     >
       <div
       className='
       categories-grid
-      container mx-auto p-2
+      container mx-auto px-4
       grid gap-4
       
       '
