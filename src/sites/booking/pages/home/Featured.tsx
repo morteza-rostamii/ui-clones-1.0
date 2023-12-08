@@ -1,16 +1,61 @@
 'use client'
 
-import React, { useState } from 'react'
-import Filters from './Filters'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@chakra-ui/react'
 
-import { catTabs, featuredLocations } from '../../data/data'
+import { catTabs, fetchFeaturedLocations } from '../../data/data'
 import { HiArrowRight } from 'react-icons/hi2'
 import CardFeatured from './CardFeatured'
 
+import { motion } from 'framer-motion'
+
 const Featured = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [featuredLocations, setFeaturedLocations] = useState([]);
+  const [filteredLocations, setFilteredLocations] = useState(featuredLocations);
 
+  useEffect(() => {
+    async function fetchLocations() {
+      const locations = await fetchFeaturedLocations();
+      setFeaturedLocations(locations);
+    }
+
+    fetchLocations();
+  }, [])
+
+  useEffect(() => {
+
+    if (!catTabs?.length && !featuredLocations?.length) return;
+
+    const activeLocation: {
+      id: number,
+      name: string,
+      term: string,
+    } | undefined = catTabs?.filter((el:any, ) => el.id === activeTab)[0];
+
+    // all: limit 8
+    if (activeLocation?.term === 'all') {
+      const shuffledArr: any = [...featuredLocations];
+      shuffledArr.sort(() => Math.random() - 0.5);
+      
+      const randomEight: any = shuffledArr.slice(0, 8);
+      console.log('--', randomEight)
+
+      return setFilteredLocations(randomEight);
+    }
+
+    const filtered: any = featuredLocations?.filter((el:any, ) => {
+      return el.city === activeLocation?.term;
+    }); 
+
+    setFilteredLocations(filtered);
+
+    console.log(activeLocation?.term, filtered)
+  }, [featuredLocations, activeTab]);
+
+  if (!featuredLocations?.length) return <></>
+
+  console.log('featured:: ', featuredLocations);
   return (
     <section
     className='
@@ -89,13 +134,17 @@ const Featured = () => {
         '
         >
           {
-            featuredLocations && featuredLocations.length
+            filteredLocations && filteredLocations.length
             ?(
-              featuredLocations.map((el:any, ) => (
-                <CardFeatured
+              filteredLocations.map((el:any, ) => (
+                <motion.div
                 key={el.id}
-                item={el}
-                />
+                layout
+                >
+                  <CardFeatured
+                  item={el}
+                  />
+                </motion.div>
               ))
             ): ''
           }
@@ -121,7 +170,7 @@ const Featured = () => {
       <style jsx>
         {`
         .grid-featured {
-          display: grid;
+          display: grid !important;
           gap: 16px;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }

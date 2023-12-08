@@ -4,13 +4,14 @@ import Link from 'next/link'
 import React from 'react'
 
 import Image from 'next/image'
-import { HiOutlineSearch } from 'react-icons/hi'
+import { HiChevronDown, HiGlobeAlt, HiOutlineSearch } from 'react-icons/hi'
 import { LuSettings2 } from "react-icons/lu";
 import { Button, IconButton } from '@chakra-ui/react'
-import { HiBars3 } from 'react-icons/hi2';
+import { HiBanknotes, HiBars3 } from 'react-icons/hi2';
 import MenuDropProfile from '../components/MenuDropProfile'
 import MenuDropNotif from '../components/MenuDropNotif'
 import Logo from '../components/Logo'
+import ModalSearch from '../components/ModalSearch'
 
 const Header = () => {
   return (
@@ -38,56 +39,35 @@ const Header = () => {
           >
             <Logo/>
           </Link>
+          <span
+          className='
+          border-r-2 pr-8 mr-8
+          hidden
+          lg:block
+          '
+          ></span>
+          <span
+          className='
+          hidden
+          lg:flex
+          '
+          >
+            <Button
+            variant={'link'}
+            display={'flex'}
+            alignItems={'center'}
+            gap={'2px'}
+            >
+              <span>
+              Travelers
+              </span>
+              <HiChevronDown size={20}/>
+            </Button>
+          </span>
         </div>
 
         {/* mobile search */}
-        <div
-        className='
-        flex items-center justify-between gap-6 flex-1
-        rounded-full p-2 px-4
-        bg-white shadow-md border-2
-        lg:hidden
-        '
-        >
-          <button
-          className='
-          text-gray-600 p-2 border-2 rounded-full
-          '
-          >
-          <HiOutlineSearch 
-          size={24}
-          />
-          </button>
-          <div
-          className='
-          flex-1
-          '
-          >
-            <h2
-            className='
-            font-bold
-            '
-            >
-              where to?
-            </h2>
-            <p
-            className='
-            text-gray-500 text-sm
-            '
-            >
-              Anywhere . Any week . Add guests
-            </p>
-          </div>
-          <button
-          className='
-          border-2 rounded-full p-2
-          '
-          >
-          <LuSettings2 
-          size={24}
-          />
-          </button>
-        </div>
+        <ModalSearch/>
 
         {/* right */}
         <div
@@ -101,18 +81,59 @@ const Header = () => {
           flex items-center gap-3
           '
           >
+            <span
+            className='
+            hidden
+            lg:flex
+            '
+            >
+              <Button
+              variant={'link'}
+              display={'flex'}
+              gap={'2px'}
+              alignItems={'center'}
+              >
+                <HiGlobeAlt />
+                <span>/</span>
+                <HiBanknotes />
+                <HiChevronDown size={20}/>
+              </Button>
+            </span>
+            <span
+            className='
+            hidden
+            lg:flex
+            '
+            >
+              <Button
+              variant={'outline'}
+              borderRadius={'9999px'}
+              borderColor={'gray.300'}
+              size={'sm'}
+              bgColor={'white'}
+              >
+                List your property
+              </Button>
+            </span>
             <MenuDropNotif/>
             <MenuDropProfile/>
           </nav>
 
-          <IconButton
-          isRound={true}
-          variant={'outline'}
-          aria-label='menu'
-          colorScheme='teal'
-          icon={<HiBars3 size={24}/>}
+          <span
+          className='
+          block
+          lg:hidden
+          '
           >
-          </IconButton>
+            <IconButton
+            isRound={true}
+            variant={'outline'}
+            aria-label='menu'
+            colorScheme='teal'
+            icon={<HiBars3 size={24}/>}
+            >
+            </IconButton>
+          </span>
         </div>
       </div>
     </header>

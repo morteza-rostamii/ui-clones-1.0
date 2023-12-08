@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import CarouselImg from './CarouselImg'
 import { HiMiniStar, HiOutlineMapPin } from 'react-icons/hi2'
+import {motion} from 'framer-motion'
 
 const CardFeatured = ({
   item,

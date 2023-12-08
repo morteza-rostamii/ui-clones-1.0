@@ -12,13 +12,16 @@ import {
   MenuDivider,
   Button,
   IconButton,
+  Avatar,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import { faker } from '@faker-js/faker'
+import { HiOutlineClipboard, HiOutlineHeart, HiOutlineUser } from 'react-icons/hi'
 
 const MenuDropProfile = () => {
   return (
-    <Menu>
+    <Menu
+    >
       <MenuButton 
       as={IconButton} 
       variant={'ghost'}
@@ -29,26 +32,76 @@ const MenuDropProfile = () => {
       width={34} 
       height={32}/>}>
       </MenuButton>
-      <MenuList>
-        <MenuItem minH='48px'>
-          {/* <Image
-            //boxSize='2rem'
-            //borderRadius='full'
-            src='https://placekitten.com/100/100'
-            alt='Fluffybuns the destroyer'
-            mr='12px'
-          /> */}
-          <span>Fluffybuns the Destroyer</span>
+      <MenuList
+      padding={'20px'}
+      >
+        <div
+        className='
+        flex items-center gap-3
+        pb-3 border-b-2
+        '
+        >
+          <div>
+            <Avatar
+            //size={''}
+            src={faker.image.avatar()}
+            />
+          </div>
+          <div>
+            <h2
+            className='
+            font-bold 
+            '
+            >
+            Eden Smith
+            </h2>
+            <p
+            className='
+            text-gray-600 text-sm
+            '
+            >
+            Los Angeles, CA
+            </p>
+          </div>
+        </div>
+        <MenuItem 
+        display={'flex'}
+        alignItems={'center'}
+        gap={'5px'}
+        //minH='40px'
+        >
+          <span>
+            <HiOutlineUser size={24}/>
+          </span>
+          <span>
+            My Account
+          </span>
         </MenuItem>
-        <MenuItem minH='40px'>
-          {/* <Image
-            boxSize='2rem'
-            borderRadius='full'
-            src='https://placekitten.com/120/120'
-            alt='Simon the pensive'
-            mr='12px'
-          /> */}
-          <span>Simon the pensive</span>
+        <MenuItem 
+        display={'flex'}
+        alignItems={'center'}
+        gap={'5px'}
+        //minH='40px'
+        >
+          <span>
+            <HiOutlineClipboard size={24}/>
+          </span>
+          <span>
+            My Bookings
+          </span>
+        </MenuItem>
+        <MenuItem 
+        display={'flex'}
+        alignItems={'center'}
+        gap={'5px'}
+        //minH='40px'
+        >
+          <span>
+            <HiOutlineHeart size={24}/>
+          </span>
+          <span>
+            Wishlist
+          </span>
         </MenuItem>
       </MenuList>
     </Menu>

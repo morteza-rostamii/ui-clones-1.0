@@ -60,8 +60,8 @@ const Hero = () => {
           </h2>
           <h1
           className='
-          font-bold text-2xl
-          md:text-5xl
+          font-bold text-2xl #max-w-[400px]
+          md:text-5xl 
           '
           >
             New generation of booking
