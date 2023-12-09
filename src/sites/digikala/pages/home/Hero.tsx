@@ -1,4 +1,5 @@
 import React from 'react'
+import HeroCarousel from './HeroCarousel'
 
 const Hero = () => {
   return (
@@ -10,10 +11,10 @@ const Hero = () => {
     >
       <div
       className='
-      container mx-auto p-4 bg-green-50
+      container mx-auto #p-4 #bg-red-500
       '
       >
-      Hero
+      <HeroCarousel/>
       </div>
     </section>
   )

@@ -42,7 +42,6 @@ const HeaderDrop = () => {
     prevScroll = window.scrollY;
 
     // if page just loaded
-    console.log(prevScroll)
     if (prevScroll === 0) setIsScrolledUp(true);
 
     function handScroll() {
@@ -63,8 +62,8 @@ const HeaderDrop = () => {
     <motion.div
     className={`
     absolute bottom-0 left-0 right-0
-    bg-opacity-70 
-    hidden items-center p-4 -z-10
+    #bg-opacity-70 
+    hidden items-center p-4 -z-50 bg-white
     h-10 
     ${isScrolledUp ? 'flex z-10' : 'hidden'}
     md:flex

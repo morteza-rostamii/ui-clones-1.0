@@ -13,14 +13,14 @@ const Header = () => {
     className='
     sticky top-0 left-0 right-0
     flex items-center
-    bg-white bg-opacity-70 z-10 shadow-md
+    bg-white #bg-opacity-70 z-10 shadow-md
     md:shadow-none
     md:mb-10 md:h-20
     '
     >
       <div
       className='
-      relative
+      relative bg-white z-10
       container mx-auto px-2 py-2 #bg-slate-50
       flex items-center justify-between
       
@@ -59,6 +59,7 @@ const Header = () => {
         >
           <Button
           leftIcon={<HiArrowLeftOnRectangle size={24}/>}
+          colorScheme='red'
           variant={'outline'}
           >
             <span

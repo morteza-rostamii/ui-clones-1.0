@@ -2,6 +2,7 @@ import React from 'react'
 
 import './index.css'
 import Header from '@/sites/digikala/layouts/Header'
+import Footer from '@/sites/digikala/layouts/Footer'
 
 const layout = ({
   children
@@ -12,7 +13,7 @@ const layout = ({
     >
       <Header/>
       {children}
-      {/* <Footer/> */}
+      <Footer/>
     </main>
   )
 }
