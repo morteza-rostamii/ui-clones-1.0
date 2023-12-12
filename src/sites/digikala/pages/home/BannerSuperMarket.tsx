@@ -7,13 +7,14 @@ import { HiArrowSmallLeft } from 'react-icons/hi2'
 import { getProducts } from '../../data/data'
 
 const BannerSuperMarket = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any>([]);
 
   useEffect(() => {
     async function fetchData() {
       const data = await getProducts({
         numberOfProducts: 5,
         page: 2,
+        term: 'products'
       })
       setProducts(data);
     }
@@ -98,7 +99,7 @@ const BannerSuperMarket = () => {
               {
                 products && products.length
                 ? (
-                  products.map((el: any, i) => (
+                  products.map((el: any, i:number) => (
                     <span
                     className={`
                     ${i === products.length - 1 ? 'hidden md:flex' : ''}

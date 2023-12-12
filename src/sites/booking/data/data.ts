@@ -274,7 +274,7 @@ export const fetchFeaturedLocations =  async () => {
       for (let i=0; i < numOfLocations; i++) {
         promises.push(
           (async () => {
-            const images = await client.photos.search({
+            const images: any = await client.photos.search({
               query: 'house',
               per_page: 4,
               page: currentPage,

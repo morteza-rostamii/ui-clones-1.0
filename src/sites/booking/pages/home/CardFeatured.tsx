@@ -13,7 +13,7 @@ const CardFeatured = ({
       
       {/* top img carousel */}
       <CarouselImg
-      images={item.images}
+      images={item?.images}
       />
 
       {/* footer */}

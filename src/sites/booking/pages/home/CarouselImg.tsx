@@ -4,14 +4,16 @@ import Image from 'next/image';
 import { Button, IconButton } from '@chakra-ui/react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 
-const CarouselImg: React.FC = ({
+const CarouselImg = ({
   images,
-}:any) => {
+}: {
+  images: any,
+}) => {
   const onChange = (currentSlide: number) => {
     console.log(currentSlide);
   };
 
-  const carouselRef = useRef(null);
+  const carouselRef: any = useRef(null);
 
   const goNext = () => {
     carouselRef.current.next();

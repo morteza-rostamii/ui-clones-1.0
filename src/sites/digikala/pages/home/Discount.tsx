@@ -8,11 +8,11 @@ import { getProducts } from '../../data/data';
 import CarouselSpecial from './CarouselSpecial';
 
 const Discount = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getProducts({numberOfProducts: 12, term: "iphone"});
+      const data = await getProducts({numberOfProducts: 12, term: "iphone", page: 1});
       setProducts(data);
     }
     fetchData();

@@ -5,6 +5,9 @@ import { categories } from '../../data/data'
 import CardCategory from './CardCategory'
 
 const CategoriesGrid = () => {
+
+  if (categories === null) return <></>
+  
   return (
     <section
     className='

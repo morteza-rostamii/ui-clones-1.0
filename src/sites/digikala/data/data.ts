@@ -1,5 +1,5 @@
+//import { HiBuildingStorefront } from "react-icons/hi2";
 import {v4 as uuidv4} from 'uuid'
-import { HiBuildingStorefront } from "react-icons/hi2";
 import { faker } from '@faker-js/faker';
 import { fakerFA } from '@faker-js/faker';
 import { createClient } from 'pexels';
@@ -17,7 +17,7 @@ async function getImages({
 }) {
   let currentPage = 1;
 
-  const images = await client.photos.search({
+  const images: any = await client.photos.search({
     query: category,
     per_page: per_page,
     page: page,
