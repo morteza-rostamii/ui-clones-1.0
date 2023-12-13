@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import {motion, useAnimation} from 'framer-motion'
 import { Button, IconButton } from '@chakra-ui/react'
 import { HiOutlineHeart } from 'react-icons/hi'
@@ -9,6 +9,7 @@ import { HiOutlineViewfinderCircle } from 'react-icons/hi2'
 import Link from 'next/link'
 import { TProduct } from '../../data/DataChair'
 import useChairStore from '../../data/ChairStore'
+import './CardItem.css';
 
 // custom animation hook
 function useAnimateAddBtn() {
@@ -47,6 +48,27 @@ function useAnimateSideBtns() {
   }
 }
 
+// get cartBtn position
+type TPosition = {
+  top: number,
+  left: number,
+}
+
+function getElementPosition(elementId: string): TPosition {
+  console.log(elementId)
+  const element: any = document.getElementById(elementId);
+  if (!element) return {top: 0, left: 0};
+  const rect = element.getBoundingClientRect();
+
+  const topPos = rect.top;
+  const leftPos = rect.left;
+  console.log('postion: ', topPos, leftPos);
+  return {
+    top: topPos,
+    left: leftPos,
+  }
+}
+
 const CardItem = ({
   item,
 }: {item: TProduct}) => {
@@ -56,6 +78,15 @@ const CardItem = ({
   
   const {items, addItem, itemExist} = useChairStore();
   const [itemIsIn, setItemIsIn] = useState(itemExist(item));
+  // true to trigger cart animation
+  const [runAnimation, setRunAnimation] = useState(false);
+  // cartBtn position
+  const [cartBtnPosition, setCartBtnPosition] = useState<TPosition>(getElementPosition('cart-btn'));
+  // cart-item position
+  const [cartItemPos, setCartItemPos] = useState<TPosition>(getElementPosition('cart-item'));
+
+  // reference to the item that move to cart
+  const cartItemRef: any = useRef(null);
 
   function handCardHoverStart() {
     onHoverStart();
@@ -69,16 +100,60 @@ const CardItem = ({
     setCardHover(false);
   }
 
+  function handAddItem() {
+    // start animation
+    //if (!cartItemRef.current) return; 
+    //cartItemRef.current.classList.add('sendtocart');
+    cartItemRef.current.style.display = 'flex';
+    //getElementPosition('');
+
+    setCartBtnPosition(getElementPosition('cart-btn'));
+
+    const rect = cartItemRef.current.getBoundingClientRect()
+    setCartItemPos({
+      top: rect.top,
+      left: rect.left,
+    });
+    setRunAnimation(true);
+
+    // cart-btn
+    const cartBtn: any = document.getElementById('cart-btn');
+
+    setTimeout(() => {
+      //cartItemRef.current.style.display = 'none';
+
+      // shake cart-btn
+      cartBtn.classList.add('shake');
+
+      setRunAnimation(false);
+    }, 1610);
+
+    setTimeout(() => {
+      cartBtn.classList.remove('shake');
+      //cartItemRef.current.style.display = 'flex';
+    }, 3220);
+
+    addItem(item)
+  }
+
   useEffect(() => {
-    console.log(items, itemExist(item));
+    // get cartItem position
+    const rect = cartItemRef.current.getBoundingClientRect()
+    setCartItemPos({
+      top: rect.top,
+      left: rect.left,
+    });
+  }, [])
+
+  useEffect(() => {
     setItemIsIn(itemExist(item));
-  }, [items])
+  }, [items]);
 
   return (
     <div
     id='card--item'
     className='
-    relativebg-white shadow-lg
+    relative bg-white shadow-lg
     '
 
     onMouseEnter={handCardHoverStart}
@@ -157,7 +232,7 @@ const CardItem = ({
           width={'100%'}
           isDisabled={itemIsIn}
 
-          onClick={() => addItem(item)}
+          onClick={handAddItem}
           >
             اضافه به سبد
           </Button>
@@ -237,6 +312,45 @@ const CardItem = ({
           </div>
         </div>
       </div>
+
+      {/* cart-item */}
+      <motion.div
+      id='cart-item'
+      className={`
+      #hidden
+      cart-item
+      absolute top-0 right-0 bg-green-300
+      z-20
+      rounded-lg w-16 h-16 overflow-hidden border-2 border-black
+      `}
+      style={{
+        display: runAnimation ? 'flex' : 'none',
+        transition: 'cubic-bezier(0.165, 0.840, 0.440, 1.000)',
+      }}
+      ref={cartItemRef}
+
+      initial={{
+        id: 'element-1',
+        x: 100,
+        y: 200,
+      }}
+      animate={{
+        x: runAnimation ? -(cartItemPos.left - cartBtnPosition.left - 16) : 0,
+        y: runAnimation ? -(cartItemPos.top - cartBtnPosition.top) + 10 : 0,
+      }}
+
+      transition={{
+        duration: 1.6,
+        //ease: 'backIn'
+      }}
+      >
+        <Image
+        className='w-full'
+        src={item.images[0]}
+        alt='item'
+        fill
+        />
+      </motion.div>
     </div>
   )
 }

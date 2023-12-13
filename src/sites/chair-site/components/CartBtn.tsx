@@ -9,7 +9,9 @@ export const CartBtn = () => {
   const {items, addItem, itemExist} = useChairStore();
 
   return (
-    <div className='relative'>
+    <div 
+    id='cart-btn'
+    className='relative'>
       <IconButton
       aria-label=''
       variant={'outline'}

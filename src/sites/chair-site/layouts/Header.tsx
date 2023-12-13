@@ -131,6 +131,8 @@ const Header = () => {
       >
         <div>
           <IconButton
+          isRound={true}
+          variant={'outline'}
           aria-label=''
           icon={<HiBars3 size={24}/>}
           >
@@ -146,14 +148,7 @@ const Header = () => {
           height={40}
           />
         </Link>
-        <div>
-          <IconButton
-          aria-label=''
-          variant={'outline'}
-          icon={<HiOutlineShoppingBag size={24}/>          }
-          >
-          </IconButton>
-        </div>
+        <CartBtn/>
       </div>
     </header>
   )
