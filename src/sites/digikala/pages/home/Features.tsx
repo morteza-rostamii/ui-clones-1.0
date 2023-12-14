@@ -10,42 +10,42 @@ import { HiDotsCircleHorizontal } from 'react-icons/hi';
 const items = [
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/d0dc31c892be8cf1408e4e14580b3f479da66bd1_1648897133.png',
+    icon: '/digikala/services/61f3ac3aff48ffeb830d76413f56cda93ff13822_1702507864.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/ac127167132653d14c758748b07824a6a7643a31_1663444619.png',
+    icon: '/digikala/services/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/625d8883f37944f3f0c4af5fe39435600931ab22_1664309850.png',
+    icon: '/digikala/services/e8c1c372a304dc7c6ed600a6d4eb017f2aaea8cd_1697297561.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/425c8f55c9bb5ad8e860bdc9f82421ce4fcc18de_1699778276.png',
+    icon: '/digikala/services/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/e8c1c372a304dc7c6ed600a6d4eb017f2aaea8cd_1697297561.png',
+    icon: '/digikala/services/ac127167132653d14c758748b07824a6a7643a31_1663444619.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
+    icon: '/digikala/services/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
+    icon: '/digikala/services/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
     label: fakerFA.lorem.words(2),
   },
   {
     id: uuidv4(),
-    icon: 'https://dkstatics-public.digikala.com/digikala-bellatrix/bfcafaf7f0afffbfd326adc48e29e3449dd69910_1688462197.png',
+    icon: '/digikala/services/78ccd40cbf305fb067de78ddab5be84f69589c8d_1648897009.png',
     label: fakerFA.lorem.words(2),
   },
 ]

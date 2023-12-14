@@ -5,23 +5,24 @@ import { Carousel } from 'antd';
 import Image from 'next/image';
 
 const banners = [
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/4219319041cc0bbccddbaaaf48610cd78d484d18_1701698365.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/cc940dcfee2ebf78c0857a4a14bb77c3b61fb4c6_1701989326.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/68a466fc8b4e6ede25be9b79e083934f18f37027_1699336559.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/a210d0d70c138d819951b9482b1ebc29256110af_1701781786.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/a77141cd190e6e760288cd99856c0e266d3157b4_1696861753.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/b3cbfdf304548520a83b0c9e34c4f3ede933c998_1701702194.jpg?x-oss-process=image/quality,q_95/format,webp',
+  '/digikala/hero/16b98592c28b78718abd8d6554cffc5fa265c8eb_1701418129.webp',
+  '/digikala/hero/650d085ebaaee5ab7be25133d2d0147cfdb06b65_1702384730.webp',
+  '/digikala/hero/16b98592c28b78718abd8d6554cffc5fa265c8eb_1701418129.webp',
+  '/digikala/hero/c42f23237eb09ddcb9bb20c6bf7cebfc177f4d78_1675544136.webp',
+  '/digikala/hero/e0e6abfc044a0f6e5a5b3148cca39dc98e266a4f_1702368852.webp',
+  '/digikala/hero/e8a20c5ef93963f3afcbbb773dd00e508c1df624_1702204057.webp',
 ];
 
 const HeroCarousel: React.FC = () => {
-  const onChange = (currentSlide: number) => {
+  /* const onChange = (currentSlide: number) => {
     console.log(currentSlide);
-  };
+  }; */
 
   return (
     <Carousel 
     autoplay
-    afterChange={onChange}>
+    //afterChange={onChange}
+    >
       {
         banners.map((el: any, i) => (
           <div 

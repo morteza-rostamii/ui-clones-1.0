@@ -4,10 +4,10 @@ import Image from 'next/image'
 import React from 'react'
 
 const bannerUrls = [
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/0759efe648d224a9e15891f242ee5b3fd77bae8f_1702103348.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/bc2a2ab35baf18247b0769cc08e1c4bde4fb3534_1702100787.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/cbde2f4d9424b696a1987cc9d7f33675634568da_1701864906.jpg?x-oss-process=image/quality,q_95/format,webp',
-  'https://dkstatics-public.digikala.com/digikala-adservice-banners/98595c5c87356705ff388ae9e785114670a35055_1701863725.jpg?x-oss-process=image/quality,q_95/format,webp',
+  '/digikala/banners/5d09d51682662b712fdd262ef2a3555d81aaf2b1_1702311722.webp',
+  '/digikala/banners/98595c5c87356705ff388ae9e785114670a35055_1701863725.webp',
+  '/digikala/banners/5d09d51682662b712fdd262ef2a3555d81aaf2b1_1702311722.webp',
+  '/digikala/banners/cbde2f4d9424b696a1987cc9d7f33675634568da_1701864906.webp',
 ]
 
 const BannersAd1 = () => {
@@ -25,32 +25,36 @@ const BannersAd1 = () => {
       '
       >
         {
-          bannerUrls.map((el: any, i: number) => (
-            <div
-            className='
-            relative aspect-[1/.7] rounded-lg overflow-hidden #bg-red-50
-            '
-            >
-              <Image
-              className='
-              #object-contain w-full rounded-lg 
-              '
-              src={el}
-              alt='banner-ad'
-              fill
-              />
+          bannerUrls.map((el: any, i: number) => {
 
-              {/* overlay */}
+            return (
               <div
+              key={i}
               className='
-              absolute top-0 bottom-0 left-0 right-0
-              bg-gray-800 bg-opacity-0 
-              hover:bg-opacity-5
+              relative aspect-[1/.7] rounded-lg overflow-hidden #bg-red-50
               '
               >
+                <Image
+                className='
+                #object-contain w-full rounded-lg 
+                '
+                src={el}
+                alt='banner-ad'
+                fill
+                />
+
+                {/* overlay */}
+                <div
+                className='
+                absolute top-0 bottom-0 left-0 right-0
+                bg-gray-800 bg-opacity-0 
+                hover:bg-opacity-5
+                '
+                >
+                </div>
               </div>
-            </div>
-          ))
+            )
+          })
         }
       </div>
 

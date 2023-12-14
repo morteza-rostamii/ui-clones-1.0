@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { HiArrowSmallLeft } from 'react-icons/hi2'
 import { getProducts } from '../../data/data'
+import Digi from '../../svg/Digi'
 
 const BannerSuperMarket = () => {
   const [products, setProducts] = useState<any>([]);
@@ -62,7 +63,7 @@ const BannerSuperMarket = () => {
               className='
               object-cover w-full
               '
-              src={'https://www.digikala.com/statics/img/png/amazing/fresh.webp'}
+              src={'/digikala/fresh.webp'}
               alt='banner-img'
               fill
               />
@@ -74,14 +75,15 @@ const BannerSuperMarket = () => {
             w-60 h-10
             '
             >
-              <Image 
+              <Digi/>
+              {/* <Image 
               className='
               object-contain w-full
               '
               src={'https://www.digikala.com/statics/img/svg/typography/fresh.svg'}
               alt='banner-img'
               fill
-              />
+              /> */}
             </div>
           </div>
 

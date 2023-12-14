@@ -129,7 +129,7 @@ const Newsletter = () => {
           className='
           object-contain w-full #max-h-96
           '
-          src={'https://chisfis-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FSVG-subcribe2.3bac6033.png&w=1200&q=75'}
+          src={'/booking/SVG-subcribe2.webp'}
           alt='newsletter'
           //fill
           width={800}

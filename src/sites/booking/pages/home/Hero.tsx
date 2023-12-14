@@ -30,7 +30,7 @@ const Hero = () => {
           className='
 
           '
-          src={'https://chisfis-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftravelhero2.322c5981.png&w=1920&q=75'}
+          src={'/booking/travelhero2.webp'}
           alt='hero-banner'
           fill
           style={{

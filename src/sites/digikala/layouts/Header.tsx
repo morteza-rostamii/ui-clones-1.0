@@ -40,7 +40,7 @@ const Header = () => {
           hidden
           md:flex
           '
-          src={'https://www.digikala.com/statics/img/svg/logo.svg'}
+          src={'/digikala/logo.svg'}
           alt='logo'
           width={100}
           height={60}

@@ -1,31 +1,36 @@
 import Image from 'next/image'
 import React from 'react'
 import { fakerFA } from '@faker-js/faker'
+import Svg from '../svg/Svg'
+import Svg1 from '../svg/Svg1'
+import Svg2 from '../svg/Svg2'
+import Svg3 from '../svg/Svg3'
+import Svg4 from '../svg/Svg4'
 
 const items = [
   {
     id: 0,
-    icon: 'https://www.digikala.com/statics/img/svg/footer/express-delivery.svg',
+    icon: <Svg/>,
     label: fakerFA.lorem.words(2),
   },
   {
     id: 1,
-    icon: 'https://www.digikala.com/statics/img/svg/footer/cash-on-delivery.svg',
+    icon: <Svg1/>,
     label: fakerFA.lorem.words(2),
   },
   {
     id: 2,
-    icon: 'https://www.digikala.com/statics/img/svg/footer/support.svg',
+    icon: <Svg2/>,
     label: fakerFA.lorem.words(2),
   },
   {
     id: 3,
-    icon: 'https://www.digikala.com/statics/img/svg/footer/days-return.svg',
+    icon: <Svg3/>,
     label: fakerFA.lorem.words(2),
   },
   {
     id: 4,
-    icon: 'https://www.digikala.com/statics/img/svg/footer/original-products.svg',
+    icon: <Svg4/>,
     label: fakerFA.lorem.words(2),
   },
 ]
@@ -50,7 +55,7 @@ const Footer = () => {
         >
           <div>
             <Image
-            src={'https://www.digikala.com/statics/img/svg/digi.svg'}
+            src={'/digikala/logo.svg'}
             alt='logo'
             width={100}
             height={40}
@@ -74,12 +79,13 @@ const Footer = () => {
               '
               >
                 <div>
-                  <Image
+                  {el.icon}
+                  {/* <Image
                   src={el.icon}
                   alt='icon'
                   width={60}
                   height={60}
-                  />
+                  /> */}
                 </div>
                 <span
                 className='
