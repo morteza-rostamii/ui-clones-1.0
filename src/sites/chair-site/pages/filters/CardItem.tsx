@@ -210,9 +210,34 @@ const CardItem = ({
           />
         </motion.div>
 
+        {/* add button on mobile */}
+        <div
+        className='
+        block
+        md:hidden
+        absolute left-[50%] right-[50%] bottom-2
+        text-black w-[80%] 
+        '
+        style={{
+          transform: 'translateX(50%)',
+        }}
+        >
+          <Button
+          colorScheme='red'
+          width={'100%'}
+          isDisabled={itemIsIn}
+
+          onClick={handAddItem}
+          >
+            اضافه به سبد
+          </Button>
+        </div>
+
         {/* add to cart */}
         <motion.div
         className='
+        hidden
+        md:block
         absolute top-[110%] left-[50%] right-[50%]
         text-black w-[80%] 
         '
@@ -241,8 +266,9 @@ const CardItem = ({
         {/* side btns */}
         <motion.div
         className='
+        hidden
         absolute top-4 left-[100%]
-        flex flex-col gap-2
+        md:flex flex-col gap-2
         '
 
         //initial={{}}
@@ -265,12 +291,38 @@ const CardItem = ({
           >
           </IconButton>
         </motion.div>
+
+        {/* side btn for mobile */}
+        <div
+        className='
+        absolute top-4 right-4
+        flex flex-col gap-2
+        md:hidden
+        '
+        >
+          <IconButton
+          aria-label=''
+          variant={'outline'}
+          isRound={true}
+          colorScheme='gray'
+          icon={<HiOutlineHeart size={24}/>}
+          >
+          </IconButton>
+          <IconButton
+          aria-label=''
+          variant={'outline'}
+          isRound={true}
+          colorScheme='gray'
+          icon={<HiOutlineViewfinderCircle size={24}/>}
+          >
+          </IconButton>
+        </div>
       </div>
 
       {/* footer */}
       <div
       className='
-      flex flex-col gap-2 px-2
+      flex flex-col gap-2 p-6 py-4
       '
       >
         <Link
